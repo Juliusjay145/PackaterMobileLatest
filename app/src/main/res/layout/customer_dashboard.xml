@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/premiumcolor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+    <requestFocus />
+
+
+    <ListView
+        android:id="@+id/ListView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/premiumcolor" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/prem"
+            android:layout_width="10dp"
+            android:layout_height="61dp"
+            android:layout_weight="1"
+            android:background="@drawable/premiumcolor"
+            android:gravity="center"
+            android:text="Premium"
+            android:textColor="#fefefe" />
+
+        <Button
+            android:id="@+id/platinum"
+            android:layout_width="10dp"
+            android:layout_height="61dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/silvercolor"
+            android:text="Platinum"
+            android:textColor="#fefefe" />
+
+        <Button
+            android:id="@+id/gold"
+            android:layout_width="10dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="-5dp"
+            android:layout_weight="1"
+            android:background="@drawable/goldcolor"
+            android:gravity="center"
+            android:text="Gold"
+            android:textColor="#DAA520"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
