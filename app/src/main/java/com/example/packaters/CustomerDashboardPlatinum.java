@@ -132,7 +132,7 @@ public class CustomerDashboardPlatinum extends AppCompatActivity implements Adap
        }
 
        if(v==btnGold){
-           Intent intent = new Intent(this, CustomerDashboardGold.class);
+           Intent intent = new Intent(this, CustomerDashboardDiamond.class);
            startActivity(intent);
        }
 

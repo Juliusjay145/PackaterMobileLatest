@@ -138,7 +138,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CustomerDashboardGold">
+        <activity android:name=".CustomerDashboardDiamond">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

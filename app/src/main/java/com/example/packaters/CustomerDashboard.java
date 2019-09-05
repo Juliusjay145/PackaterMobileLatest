@@ -26,8 +26,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 
 public class CustomerDashboard extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
 
@@ -56,7 +54,7 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
         lv.setOnItemClickListener(this);
 
         try{
-            URL url = new URL("http://192.168.43.119/packaters/index.php/AndroidController/fetch_caterer/premium");
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_caterer/premium");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -147,7 +145,7 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
 
        if(v == btnGold)
        {
-           Intent intent = new Intent(this, CustomerDashboardGold.class);
+           Intent intent = new Intent(this, CustomerDashboardDiamond.class);
            startActivity(intent);
        }
 

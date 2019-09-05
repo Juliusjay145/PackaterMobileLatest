@@ -60,7 +60,7 @@ public class ProfileCustomer extends CustomerDashboard implements View.OnClickLi
         String lname = prf.getString("cust_lastname", null);
 
         try{
-            URL url = new URL("http://192.168.43.119/Packaters/index.php/AndroidController/fetch_customer_profile/"+customer_id);
+            URL url = new URL("http://192.168.43.19/Packaters/index.php/AndroidController/fetch_customer_profile/"+customer_id);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));

@@ -26,7 +26,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 
-public class CustomerDashboardGold extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class CustomerDashboardDiamond extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     ListView lv;
     SharedPreferences prf;
@@ -39,7 +39,7 @@ public class CustomerDashboardGold extends AppCompatActivity implements AdapterV
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        setContentView(R.layout.customer_dashboard_gold);
+        setContentView(R.layout.customer_dashboard_diamond);
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         btnPlatinum = findViewById(R.id.platinum);
         btnPremium = findViewById(R.id.prem);
@@ -51,7 +51,7 @@ public class CustomerDashboardGold extends AppCompatActivity implements AdapterV
         lv.setOnItemClickListener(this);
 
         try{
-            URL url = new URL("http://192.168.43.119/packaters/index.php/AndroidController/fetch_caterer/gold");
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_caterer/gold");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
