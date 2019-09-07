@@ -71,7 +71,7 @@ class BookingDetailsAdapter extends BaseAdapter {
         }else
 
             handler=(BookingDetailsHandler) arg1.getTag();
-            Bitmap bm  = getBitmapFromURL(list.get(arg0).getImage());
+            Bitmap bm  = BitmapFactory.decodeFile(list.get(arg0).getImage());
             handler.name.setText(list.get(arg0).getName());
             handler.address.setText(list.get(arg0).getAddress());
             handler.date.setText(list.get(arg0).getDate());

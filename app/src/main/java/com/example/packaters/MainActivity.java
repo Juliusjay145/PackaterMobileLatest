@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.common.collect.Maps;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText user,pass;
     Button btnLogin;
-
+    TextView txtregister;
     SharedPreferences pref;
 
     @Override
@@ -49,7 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         user = findViewById(R.id.editText3);
         pass = findViewById(R.id.editText4);
         btnLogin = findViewById(R.id.button);
+        txtregister =  findViewById(R.id.register);
         btnLogin.setOnClickListener(this);
+        txtregister.setOnClickListener(this);
 
     }
 
@@ -57,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
 
-
-
+        if(v==btnLogin)
+        {
             String username = user.getText().toString();
             String password = pass.getText().toString();
             //192.168.43.19
@@ -114,6 +117,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }catch (JSONException e){
                 e.printStackTrace();
             }
+        }
+
+        if(v==txtregister)
+        {
+            Intent intent = new Intent(this, RegisterCustomer.class);
+            startActivity(intent);
+        }
+
+
+
+
 
     }
 

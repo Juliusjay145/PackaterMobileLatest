@@ -48,7 +48,7 @@ public class CateringProfile extends CustomerDashboard implements View.OnClickLi
         String ID = getIntent().getStringExtra("catering_id");
 
         try{
-            URL url = new URL("http://192.168.43.119/packaters/index.php/AndroidController/fetch_catering_provider/"+ID);
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_catering_provider/"+ID);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));

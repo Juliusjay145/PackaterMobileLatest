@@ -20,7 +20,7 @@
             android:layout_marginBottom="-120dp"/>
 
         <EditText
-            android:id="@+id/packagename"
+            android:id="@+id/editText31"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_above="@+id/editText4"
@@ -30,7 +30,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/redbtns"
             android:ems="10"
-            android:hint=" Name"
+            android:hint="Firstname"
             android:inputType="text"
             android:paddingLeft="10dp"
             android:textColor="#000000"
@@ -38,7 +38,7 @@
             android:textColorLink="#000000" />
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/editText32"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
@@ -47,15 +47,15 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/redbtns"
             android:ems="10"
-            android:hint="Address"
+            android:hint="Lastname"
             android:inputType="text"
             android:padding="10dp"
             android:textColor="#000000"
             android:textColorHint="#4D585B"
-            android:textColorLink="#000000"  />
+            android:textColorLink="#000000" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editText33"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_above="@+id/editText4"
@@ -74,7 +74,7 @@
             android:textColorLink="#000000" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText34"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_above="@+id/editText5"
@@ -94,7 +94,7 @@
             android:textColorLink="#000000" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/editText35"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
@@ -112,7 +112,7 @@
             android:textColorLink="#000000" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/editText36"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"

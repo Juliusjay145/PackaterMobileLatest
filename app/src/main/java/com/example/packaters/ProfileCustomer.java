@@ -1,11 +1,13 @@
 package com.example.packaters;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ import java.util.List;
 public class ProfileCustomer extends CustomerDashboard implements View.OnClickListener {
 
     TextView fname,lastname,number,address;
+    ImageView image;
     Button btnUpdate;
     SharedPreferences prf;
 
@@ -53,6 +56,7 @@ public class ProfileCustomer extends CustomerDashboard implements View.OnClickLi
         address = findViewById(R.id.addr);
         number = findViewById(R.id.contact);
         btnUpdate = findViewById(R.id.button3);
+        image = findViewById(R.id.imageView);
         btnUpdate.setOnClickListener(this);
         String cid = getIntent().getStringExtra("caterings_id");
         String customer_id = prf.getString("id", "");
@@ -79,6 +83,7 @@ public class ProfileCustomer extends CustomerDashboard implements View.OnClickLi
                 String clname = item.getString("cust_lastname");
                 String cnumber = item.getString("cust_phonenum");
                 String caddress = item.getString("cust_address");
+                String picture = item.getString("path_image");
                 //String cc = item.getString("client_contact");
                 //String ct = item.getString("client_contact");
 //	        	Toast.makeText(getApplicationContext(), cn, Toast.LENGTH_LONG).show();
@@ -86,6 +91,7 @@ public class ProfileCustomer extends CustomerDashboard implements View.OnClickLi
                 lastname.setText(clname);
                 number.setText(cnumber);
                 address.setText(caddress);
+                image.setImageBitmap(BitmapFactory.decodeFile(picture));
             }
         }catch (MalformedURLException e){
             e.printStackTrace();

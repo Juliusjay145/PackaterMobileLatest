@@ -90,7 +90,7 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
 
 
         try{
-            URL url = new URL("http://192.168.43.119/packaters/index.php/AndroidController/fetch_customer_profile/"+customer_id);
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_customer_profile/"+customer_id);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
