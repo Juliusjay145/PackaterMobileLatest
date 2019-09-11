@@ -38,6 +38,8 @@ public class CateringProfile extends CustomerDashboard implements View.OnClickLi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Catering Profile");
+
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         this.lv = findViewById(R.id.listView1);
         this.adapter = new CateringProfileAdapter(this, list);

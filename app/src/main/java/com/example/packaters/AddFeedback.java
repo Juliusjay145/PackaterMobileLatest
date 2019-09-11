@@ -41,6 +41,8 @@ public class AddFeedback extends CustomerDashboard implements View.OnClickListen
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
+        getSupportActionBar().setTitle("Comments and FeedBacks");
+
 
         comment = findViewById(R.id.editText2);
         btnBook = findViewById(R.id.book1);
@@ -73,7 +75,7 @@ public class AddFeedback extends CustomerDashboard implements View.OnClickListen
         nameValuePairs.add(new BasicNameValuePair("pack_customer_id", customer_id));
         try{
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://192.168.43.118/Packaters/index.php/AndroidController/comment");
+            HttpPost httpPost = new HttpPost("http://192.168.43.19/Packaters/index.php/AndroidController/comment");
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             HttpResponse response = httpClient.execute(httpPost);
             HttpEntity entity = response.getEntity();

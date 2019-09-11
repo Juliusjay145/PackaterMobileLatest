@@ -56,6 +56,7 @@ public class Payment extends CustomerDashboard implements View.OnClickListener {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Payments");
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         CardForm cardForm = findViewById(R.id.cardform);
         TextView txtDes = findViewById(R.id.payment_amount);
@@ -139,7 +140,7 @@ public class Payment extends CustomerDashboard implements View.OnClickListener {
 
         try{
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://192.168.43.119/Packaters/index.php/AndroidController/pay/"+ID);
+            HttpPost httpPost = new HttpPost("http://192.168.43.19/Packaters/index.php/AndroidController/pay/"+ID);
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             HttpResponse response = httpClient.execute(httpPost);
             HttpEntity entity = response.getEntity();

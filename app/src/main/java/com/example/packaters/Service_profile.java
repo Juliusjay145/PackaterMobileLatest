@@ -37,6 +37,8 @@ public class Service_profile extends CustomerDashboard implements View.OnClickLi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Services Profile");
+
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         lv = findViewById(R.id.ListView1);
         this.adapter = new ServiceProfileAdapter(this, list);

@@ -190,7 +190,7 @@ public class RegisterCustomer extends CustomerDashboard implements View.OnClickL
                     is=entity.getContent();
                     Toast.makeText(getApplicationContext(), "Booking Transaction Success", Toast.LENGTH_SHORT).show();
                     String sp = getIntent().getStringExtra("serv_price");
-                    Intent intent = new Intent(this, BookingDetails.class);
+                    Intent intent = new Intent(this, MainActivity.class);
                     intent.putExtra("s_price", sp);
                     startActivityForResult(intent, 1);
                     //			txtname.setText("");

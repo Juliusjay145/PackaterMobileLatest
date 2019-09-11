@@ -51,6 +51,8 @@ public class ProfileCustomer extends CustomerDashboard implements View.OnClickLi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Customer Profile");
+
         fname = findViewById(R.id.cateringname);
         lastname = findViewById(R.id.cateringname2);
         address = findViewById(R.id.addr);

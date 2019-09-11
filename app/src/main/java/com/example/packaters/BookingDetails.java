@@ -39,6 +39,8 @@ public class BookingDetails extends AppCompatActivity implements AdapterView.OnI
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Booking Details");
+
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         this.lv = findViewById(R.id.ListView1);
         this.adapter = new BookingDetailsAdapter(this, list);

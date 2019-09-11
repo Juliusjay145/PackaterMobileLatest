@@ -70,6 +70,8 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Booking Transactions");
+
         address = findViewById(R.id.name);
         date = findViewById(R.id.editText3);
         time = findViewById(R.id.editText4);
@@ -217,7 +219,7 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
                         is=entity.getContent();
                         Toast.makeText(getApplicationContext(), "Booking Transaction Success", Toast.LENGTH_SHORT).show();
                         String sp = getIntent().getStringExtra("serv_price");
-                        Intent intent = new Intent(this, BookingDetails.class);
+                        Intent intent = new Intent(this, CustomerDashboard.class);
                         intent.putExtra("s_price", sp);
                         startActivityForResult(intent, 1);
                         //			txtname.setText("");

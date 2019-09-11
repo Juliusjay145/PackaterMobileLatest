@@ -36,6 +36,8 @@ public class Service extends CustomerDashboard implements AdapterView.OnItemClic
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Catering Services");
+
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         gv = findViewById(R.id.gridView1);
         this.adapter = new ServiceAdapter(this, list);

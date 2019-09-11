@@ -37,6 +37,8 @@ public class MenuService extends CustomerDashboard implements View.OnClickListen
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Menu Services");
+
         setContentView(R.layout.menu);
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         gv = findViewById(R.id.gridView1);

@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -42,6 +43,7 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Premium Catering Services");
         setContentView(R.layout.customer_dashboard);
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         btnPlatinum = findViewById(R.id.platinum);
@@ -52,6 +54,8 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
         this.adapter = new CompanyAdapter(this, list);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
+
+        String customer_id = prf.getString("id", "");
 
         try{
             URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_caterer/premium");
@@ -73,6 +77,40 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
                 String CompanyImage = item.getString("path_image");
                 list.add(new CateringList(CompanyImage,pestcontrolId,pestcontrol_name));
                 adapter.notifyDataSetChanged();
+            }
+        }catch (MalformedURLException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        try{
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_booking/"+customer_id);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            InputStream is=conn.getInputStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String s=br.readLine();
+
+            is.close();
+            conn.disconnect();
+
+            Log.d("json data", s);
+            JSONObject json=new JSONObject(s);
+            JSONArray array = json.getJSONArray("pack_transaction");
+            for(int i=0; i<array.length(); i++){
+                JSONObject item = array.getJSONObject(i);
+                String status = item.getString("status");
+
+                if(status.equals("Confirm"))
+                {
+                    AlertDialog dialog = new AlertDialog.Builder(this).create();
+                    dialog.setMessage("Your booking request has been" + status);
+                    dialog.setTitle("Notification");
+                    dialog.show();
+                }
+
             }
         }catch (MalformedURLException e){
             e.printStackTrace();

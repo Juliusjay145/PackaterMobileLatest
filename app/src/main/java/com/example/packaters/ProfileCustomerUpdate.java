@@ -47,6 +47,8 @@ public class ProfileCustomerUpdate extends CustomerDashboard implements View.OnC
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Customer Settings");
+
         fname = findViewById(R.id.editText1);
         address = findViewById(R.id.editText2);
         number = findViewById(R.id.editText3);
