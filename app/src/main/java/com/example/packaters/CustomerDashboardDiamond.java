@@ -56,7 +56,7 @@ public class CustomerDashboardDiamond extends AppCompatActivity implements Adapt
         String customer_id = prf.getString("id", "");
 
         try{
-            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_caterer/gold");
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_caterer/diamond");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -136,8 +136,8 @@ public class CustomerDashboardDiamond extends AppCompatActivity implements Adapt
             startActivity(new Intent(this,ProfileCustomer.class));
         }
         else
-        if (id==R.id.settings){
-            Toast.makeText(this, "Details", Toast.LENGTH_SHORT).show();
+        if (id==R.id.details){
+            Toast.makeText(this, "Booking Details", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,BookingDetails.class));
         }
         else

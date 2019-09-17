@@ -37,7 +37,7 @@ public class Service_profile extends CustomerDashboard implements View.OnClickLi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setTitle("Services Profile");
+        getSupportActionBar().setTitle("Profile Services");
 
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         lv = findViewById(R.id.ListView1);
@@ -101,11 +101,13 @@ public class Service_profile extends CustomerDashboard implements View.OnClickLi
         String sname = getIntent().getStringExtra("serve_name");
         String Catering_ID = getIntent().getStringExtra("service_id");
         String service_price = getIntent().getStringExtra("serve_price");
+        String cat = getIntent().getStringExtra("cate_id");
         Intent intent = new Intent(this, MenuService.class);
         intent.putExtra("serve_id", ID);
         intent.putExtra("c_id", Catering_ID);
         intent.putExtra("s_name", sname);
         intent.putExtra("s_price", service_price);
+        intent.putExtra("ca_id", cat);
         startActivityForResult(intent, 1);
     }
 }

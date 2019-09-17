@@ -60,6 +60,8 @@ public class RegisterCustomer extends CustomerDashboard implements View.OnClickL
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Customer Registration   ");
+
         name = findViewById(R.id.editText31);
         lastname = findViewById(R.id.editText32);
         phonenumber = findViewById(R.id.editText33);

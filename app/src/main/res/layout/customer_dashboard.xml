@@ -53,7 +53,7 @@
             android:layout_weight="1"
             android:background="@drawable/goldcolor"
             android:gravity="center"
-            android:text="Diamonds"
+            android:text="Diamond"
             android:textColor="#fefefe"
             android:textStyle="bold" />
     </LinearLayout>

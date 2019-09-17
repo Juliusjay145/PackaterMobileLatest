@@ -10,13 +10,14 @@
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:verticalSpacing="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="70dp"
         android:horizontalSpacing="10dp"
+        android:numColumns="2"
         android:stretchMode="columnWidth"
-        android:numColumns="2"/>
+        android:verticalSpacing="10dp" />
 
     <Button
         android:id="@+id/button3"
@@ -31,5 +32,11 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:textColor="#fefefe" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select your Food " />
 
 </RelativeLayout>

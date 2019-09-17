@@ -143,15 +143,15 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
             startActivity(new Intent(this,ProfileCustomer.class));
         }
         else
-        if (id==R.id.settings){
-            Toast.makeText(this, "Details", Toast.LENGTH_SHORT).show();
+        if (id==R.id.details){
+            Toast.makeText(this, "Booking Details", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,BookingDetails.class));
         }
-        else
-        if (id==R.id.map){
-            Toast.makeText(this, "Details", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this,MapsActivity.class));
-        }
+//        else
+//        if (id==R.id.map){
+//            Toast.makeText(this, "Details", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this,MapsActivity.class));
+//        }
         else
         if (id==R.id.logout){
             startActivity(new Intent(this,MainActivity.class));

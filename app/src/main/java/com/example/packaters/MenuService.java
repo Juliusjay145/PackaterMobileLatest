@@ -50,6 +50,7 @@ public class MenuService extends CustomerDashboard implements View.OnClickListen
         String cID = getIntent().getStringExtra("c_id");
         String sName = getIntent().getStringExtra("s_name");
         String sPrice = getIntent().getStringExtra("s_price");
+        String caID = getIntent().getStringExtra("ca_id");
 
         try{
             URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_service_menu/"+ sID+"/"+cID);
@@ -95,11 +96,13 @@ public class MenuService extends CustomerDashboard implements View.OnClickListen
         String cID = getIntent().getStringExtra("c_id");
         String sName = getIntent().getStringExtra("s_name");
         String sPrice = getIntent().getStringExtra("s_price");
+        String caID = getIntent().getStringExtra("ca_id");
         Intent intent = new Intent(this,BookingTransaction.class);
         intent.putExtra("serv_id", sID);
         intent.putExtra("caterings_id", cID);
         intent.putExtra("serv_name", sName);
         intent.putExtra("serv_price", sPrice);
+        intent.putExtra("cid", caID);
         startActivityForResult(intent, 1);
 
 

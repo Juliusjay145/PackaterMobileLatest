@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class BookingDetails extends AppCompatActivity implements AdapterView.OnI
     SharedPreferences prf;
     ArrayList<BookingDetailsList> list = new ArrayList<BookingDetailsList>();
     BookingDetailsAdapter adapter;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,8 @@ public class BookingDetails extends AppCompatActivity implements AdapterView.OnI
                 String CustomerImage = item.getString("path_image");
                 list.add(new BookingDetailsList(CustomerImage,pack_fname,pack_address,pack_date,pack_time,pack_price,pack_status,pack_name,pestcontrolId,cust_id));
                 adapter.notifyDataSetChanged();
+
+
             }
         }catch (MalformedURLException e){
             e.printStackTrace();
@@ -104,8 +108,8 @@ public class BookingDetails extends AppCompatActivity implements AdapterView.OnI
             startActivity(new Intent(this,ProfileCustomer.class));
         }
         else
-        if (id==R.id.settings){
-            Toast.makeText(this, "Details", Toast.LENGTH_SHORT).show();
+        if (id==R.id.details){
+            Toast.makeText(this, "Booking Details", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,BookingDetails.class));
         }
         else
@@ -129,6 +133,5 @@ public class BookingDetails extends AppCompatActivity implements AdapterView.OnI
         startActivityForResult(intent, 1);
 
     }
-
 
 }

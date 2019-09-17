@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +37,7 @@ public class Service extends CustomerDashboard implements AdapterView.OnItemClic
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.newlogo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setTitle("Catering Services");
+        getSupportActionBar().setTitle("List of Services");
 
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
         gv = findViewById(R.id.gridView1);
@@ -44,6 +45,7 @@ public class Service extends CustomerDashboard implements AdapterView.OnItemClic
         gv.setAdapter(adapter);
         gv.setOnItemClickListener(this);
         String ID = getIntent().getStringExtra("cater_id");
+        Toast.makeText(getApplicationContext(), ID, Toast.LENGTH_SHORT).show();
 
         try{
             URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_service/"+ ID);

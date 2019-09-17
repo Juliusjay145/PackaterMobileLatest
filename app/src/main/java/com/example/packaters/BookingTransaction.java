@@ -83,6 +83,7 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
         String cid = getIntent().getStringExtra("caterings_id");
         String sname = getIntent().getStringExtra("serv_name");
         String sprice = getIntent().getStringExtra("serv_price");
+        String caID = getIntent().getStringExtra("cid");
         String customer_id = prf.getString("id", "");
         String name = prf.getString("cust_name", null);
         String lname = prf.getString("cust_lastname", null);
@@ -175,6 +176,7 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
                 String sID = getIntent().getStringExtra("serv_id");
                 String cid = getIntent().getStringExtra("caterings_id");
                 String sprice = getIntent().getStringExtra("serv_price");
+                String caID = getIntent().getStringExtra("cid");
                 String customers_id = prf.getString("id", "");
 
                 String p_name = package_name.getText().toString();
@@ -203,7 +205,7 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
                     nameValuePairs.add(new BasicNameValuePair("package_address", p_address));
                     nameValuePairs.add(new BasicNameValuePair("p_date", p_date));
                     nameValuePairs.add(new BasicNameValuePair("p_time", p_time));
-                    nameValuePairs.add(new BasicNameValuePair("pack_caterer_id", cid));
+                    nameValuePairs.add(new BasicNameValuePair("pack_caterer_id", caID));
                     nameValuePairs.add(new BasicNameValuePair("customer_id", customers_id));
                     nameValuePairs.add(new BasicNameValuePair("customer_fname", name));
                     nameValuePairs.add(new BasicNameValuePair("customer_lname", lname));
@@ -219,7 +221,7 @@ public class BookingTransaction extends CustomerDashboard implements View.OnClic
                         is=entity.getContent();
                         Toast.makeText(getApplicationContext(), "Booking Transaction Success", Toast.LENGTH_SHORT).show();
                         String sp = getIntent().getStringExtra("serv_price");
-                        Intent intent = new Intent(this, CustomerDashboard.class);
+                        Intent intent = new Intent(this, BookingDetails.class);
                         intent.putExtra("s_price", sp);
                         startActivityForResult(intent, 1);
                         //			txtname.setText("");

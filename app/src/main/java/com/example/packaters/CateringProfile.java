@@ -4,10 +4,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,6 +51,7 @@ public class CateringProfile extends CustomerDashboard implements View.OnClickLi
         btnBook = findViewById(R.id.button2);
         btnBook.setOnClickListener(this);
         String ID = getIntent().getStringExtra("catering_id");
+        Toast.makeText(getApplicationContext(), ID, Toast.LENGTH_SHORT).show();
 
         try{
             URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_catering_provider/"+ID);
@@ -103,4 +107,42 @@ public class CateringProfile extends CustomerDashboard implements View.OnClickLi
         intent.putExtra("caterings_id", ID);
         startActivityForResult(intent, 1);
     }
+
+    //menus
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.commonmenus,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if (id==R.id.home){
+//            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this,CustomerDashboard.class));
+//        }
+//        else
+//        if (id==R.id.payment){
+//            Toast.makeText(this, "Payments", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this,ProfileCustomer.class));
+//        }
+//        else
+//        if (id==R.id.details){
+//            Toast.makeText(this, "Booking Details", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this,BookingDetails.class));
+//        }
+////        else
+////        if (id==R.id.map){
+////            Toast.makeText(this, "Details", Toast.LENGTH_SHORT).show();
+////            startActivity(new Intent(this,MapsActivity.class));
+////        }
+//        else
+//        if (id==R.id.logout){
+//            startActivity(new Intent(this,MainActivity.class));
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
+////    end of menu
 }
