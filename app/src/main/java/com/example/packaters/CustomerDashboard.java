@@ -87,7 +87,7 @@ public class CustomerDashboard extends AppCompatActivity implements AdapterView.
         }
 
         try{
-            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_booking/"+customer_id);
+            URL url = new URL("http://192.168.43.19/packaters/index.php/AndroidController/fetch_bookings/"+customer_id);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             InputStream is=conn.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));

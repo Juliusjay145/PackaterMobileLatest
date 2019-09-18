@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -57,10 +59,11 @@ public class RegisterCustomer extends CustomerDashboard implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.regsiter_customer);
         prf = getSharedPreferences("user_details", MODE_PRIVATE);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.mipmap.newlogo);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setTitle("Customer Registration   ");
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().build();
+        StrictMode.setThreadPolicy(policy);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         name = findViewById(R.id.editText31);
         lastname = findViewById(R.id.editText32);
