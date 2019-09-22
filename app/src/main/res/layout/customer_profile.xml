@@ -61,7 +61,7 @@
                 android:id="@+id/cateringname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="98dp"
+                android:layout_marginLeft="30dp"
                 android:textStyle="bold"
                 android:text="label"
                 android:textSize="18sp" />
@@ -105,7 +105,7 @@
                 android:id="@+id/addr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="30dp"
                 android:text="label"
                 android:textStyle="bold"
 
